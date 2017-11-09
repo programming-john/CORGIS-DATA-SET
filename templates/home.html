@@ -9,11 +9,12 @@
   </head>
   <body class="text-center">
     <a href="http:www.dhs.gov/yearbook-immigration-statistics"><h3 class="jumbotron">CORGIS Immigration Data Set</h3></a>
-    <p>Significance: The data from the Immigration json<br>shows the amount and type of immigrant<br>that has arrived in the US in 2008.</p>
-    <p>The data is calulated based on the applications for Greencards or Naturalization are submmited to USCIS office</p>
-    <p>Immigration in the US is regulated by Government laws such as the<br>
-       Immigration and Nationality Act 1952, defines the Immigration System.</p>
-    <p>More information on the Act can be found at:</p>
-    <a href="https://www.uscis.gov/ilink/docView/SLB/HTML/SLB/act.html">Immigration and Nationality Act</a>
+    <p>The Dictionaries structure is as follows</p>
+    <p>The First Key is the Country and it's value is the countries name.</p>
+    <p>The next key is called Data, which has another dictionary for a value that possess the types of Immigrants that the US received from that country</p>
+    <p>For instance, theres a value called 'Legal Permanent Residents' which has another dictionary that details the types of legal residents.</p>
+    <p>Which are residents from last place they lived('Last Residence') or residents by birth('Birth').</p>
+    <p>The Dictinary finishes with a 'Year':'yyyy' value pair.</p>
+    <p>The rest of the json file runs through all countries that the US has received immigrants from.</p>
   </body>
 </html>
