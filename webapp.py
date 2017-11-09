@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
-with open('immigration.json') as demographics_data:
+with open('immigration.json') as immigrants_data:
         data = json.load(immigrants_data)
 
 @app.route("/")
