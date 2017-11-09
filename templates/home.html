@@ -10,36 +10,43 @@
   </head>
   <body>
     <a href="http:www.dhs.gov/yearbook-immigration-statistics"><h3 class="jumbotron text-center">CORGIS Immigration Data Set</h3></a>
-    <h4><b>The Dictionary Structure:</b></h4>
-    <p><b>'Country': 'countryName'</b> value pair establishes we're seeing immigration data from.</p>
-    <pre>
-    [
-      {
-      "Country": "Canada",
-        "Data": {
-          "Enforcement": {
-            "Non-criminal": 1099,
-            "Criminal": 462, 
-            "Apprehended": 1486, 
-            "Inadmissable": 41861
-          }, <br>
-          "Legal permanant residences": {
-            "Last Residence": 29930, 
-            "Birth": 21878<br>
-          }, <br>
-          "Naturalizations (Birth)": 7815, 
-          "Refugees": {
-            "Arrived": -1,
-            "Defensive Asylum": 4, 
-            "Affirmative": -1
-          },
-          "Nonimmigrant Admissions": {
-            "Birth": 231171,
-            "Last Residence": 527264
-          }
-        },
-        "Year": 2005
-      },
-    </pre>
+    <table>
+      <tr>
+        <td>
+          <h4><b>The Dictionary Structure:</b></h4>
+          <p><b>'Country': 'countryName'</b> value pair establishes we're seeing immigration data from.</p>
+        </td>
+        <td>
+          <pre>
+            [
+              {
+                "Country": "Canada",
+                "Data": {
+                  "Enforcement": {
+                    "Non-criminal": 1099,
+                    "Criminal": 462, 
+                    "Apprehended": 1486, 
+                    "Inadmissable": 41861
+                  },
+                  "Legal permanant residences": {
+                    "Last Residence": 29930, 
+                    "Birth": 21878<br>
+                  },
+                  "Naturalizations (Birth)": 7815, 
+                  "Refugees": {
+                    "Arrived": -1,
+                    "Defensive Asylum": 4, 
+                    "Affirmative": -1
+                  },
+                  "Nonimmigrant Admissions": {
+                    "Birth": 231171,
+                    "Last Residence": 527264
+                  }
+                },
+                "Year": 2005
+              },
+          </pre>
+        </td>
+      </tr>
   </body>
 </html>
