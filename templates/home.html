@@ -7,14 +7,10 @@
     <title>Immigration</title>
     <link rel="favicon icon" href="{{url_for('static',filename='facivon.ico')}}">
   </head>
-  <body class="text-center">
-    <a href="http:www.dhs.gov/yearbook-immigration-statistics"><h3 class="jumbotron">CORGIS Immigration Data Set</h3></a>
-    <p>The Dictionaries structure is as follows</p>
-    <p>The First Key is the Country and it's value is the countries name.</p>
-    <p>The next key is called Data, which has another dictionary for a value that possess the types of Immigrants that the US received from that country</p>
-    <p>For instance, theres a value called 'Legal Permanent Residents' which has another dictionary that details the types of legal residents.</p>
-    <p>Which are residents from last place they lived('Last Residence') or residents by birth('Birth').</p>
-    <p>The Dictinary finishes with a 'Year':'yyyy' value pair.</p>
-    <p>The rest of the json file runs through all countries that the US has received immigrants from.</p>
+  <body>
+    <a href="http:www.dhs.gov/yearbook-immigration-statistics"><h3 class="jumbotron text-center">CORGIS Immigration Data Set</h3></a>
+    <p>The Dictionary Structure:</p>
+    <p>'Country': 'countryName' value pair establishes what country we're talking about.</p>
+    
   </body>
 </html>
