@@ -9,44 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
   </head>
   <body>
-    <a href="http:www.dhs.gov/yearbook-immigration-statistics"><h3 class="jumbotron text-center">CORGIS Immigration</h3><br><p>Reading a Data Set</p></a>
-    <table>
-      <tr>
-        <td>
-          <h4><b>The Dictionary Structure:</b></h4>
-          <p><b>'Country': 'countryName'</b> value pair establishes we're seeing immigration data from.</p>
-        </td>
-        <td>
-          <pre>
-            [{
-                "Country": "Canada",
-                "Data": {
-                  "Enforcement": {
-                    "Non-criminal": 1099,
-                    "Criminal": 462, 
-                    "Apprehended": 1486, 
-                    "Inadmissable": 41861
-                  },
-                  "Legal permanant residences": {
-                    "Last Residence": 29930, 
-                    "Birth": 21878<br>
-                  },
-                  "Naturalizations (Birth)": 7815, 
-                  "Refugees": {
-                    "Arrived": -1,
-                    "Defensive Asylum": 4, 
-                    "Affirmative": -1
-                  },
-                  "Nonimmigrant Admissions": {
-                    "Birth": 231171,
-                    "Last Residence": 527264
-                  }
-                },
-                "Year": 2005
-              }]
-          </pre>
-        </td>
-      </tr>
-    </table>
+    <h1>About Immigration</h1>
+    <p>The immigration data set used can be found at <a href="https://think.cs.vt.edu/corgis/json/immigration/immigration.html">here</a></p> 
   </body>
 </html>
