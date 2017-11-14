@@ -8,12 +8,9 @@ with open('immigration.json') as immigrants_data:
         data = json.load(immigrants_data)
 
 def get_countries():
-    country = data[0]["Country"]
     op = ""
     for c in data:
-        if country == c["Country"]:
-            op += Markup("<option value=" + country +">" + country + "</option>")
-            state = c["Country"]
+        op += Markup("<option value=" + c["Country"] +">" + c["Country"] + "</option>")
     return op        
         
 @app.route("/")
