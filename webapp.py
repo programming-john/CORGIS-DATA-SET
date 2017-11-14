@@ -11,7 +11,7 @@ def get_countries():
     country = data[0]["Country"]
     op = ""
     for c in data:
-        if country != c["Country"]:
+        if country == c["Country"]:
             op += Markup("<option value=" + country +">" + country + "</option>")
             state = c["Country"]
     return op        
