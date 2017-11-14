@@ -13,13 +13,17 @@ def get_countries():
         op += Markup("<option value=" + c["Country"] +">" + c["Country"] + "</option>")
     return op        
         
+def get_country_facts(place)
+    return "memes"
+        
 @app.route("/")
 def render_main():
     return render_template('home.html')
 
-@app.route("/stats")
+@app.route("/stats", methods=['GET','POST'])
 def render_stats():
-    return render_template('countrystats.html', country= get_countries())
+    place = request.args['dat']
+    return render_template('countrystats.html', country= get_countries(), stats = get_country_facts(place))
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
