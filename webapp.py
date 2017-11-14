@@ -11,5 +11,9 @@ with open('immigration.json') as immigrants_data:
 def render_main():
     return render_template('home.html')
 
+@app.route("/stats")
+def render_stats():
+    return render_template('countrystats.html')
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)
