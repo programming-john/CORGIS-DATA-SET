@@ -21,5 +21,9 @@ def render_main():
 def render_stats():
     return render_template('countrystats.html', country= get_countries())
 
+@app.route("/act", methods=['GET','POST'])
+def render_result():
+    return render_template('countrystats.html',country=get_countries(),info="memes")
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)
