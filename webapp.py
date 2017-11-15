@@ -17,9 +17,8 @@ def get_countries():
 def render_main():
     return render_template('home.html')
 
-@app.route("/stats", methods=['GET','POST'])
+@app.route("/stats")
 def render_stats():
-    place = request.args['dat']
     return render_template('countrystats.html', country= get_countries())
 
 if __name__=="__main__":
