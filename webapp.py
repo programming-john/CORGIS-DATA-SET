@@ -12,6 +12,13 @@ def get_countries():
     for c in data:
         op += Markup("<option value=" + c["Country"] +">" + c["Country"] + "</option>")
     return op
+
+def get_country_facts(country):
+    fact = ""
+    for c in data:
+        if c["Country"] == country:
+           fact += Markup("<p>"+ c["Data"]["Legal permanant residences"]["Last Residence"] + "</p>")
+    return fact
         
 @app.route("/")
 def render_main():
@@ -23,7 +30,8 @@ def render_stats():
 
 @app.route("/act", methods=['GET','POST'])
 def render_result():
-    return render_template('countrystats.html',country=get_countries(),info="memes")
+    place = request.args['dat']
+    return render_template('countrystats.html',country=get_countries(),info=get_country_facts(place))
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
