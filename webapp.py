@@ -17,7 +17,7 @@ def get_country_facts(country):
     fact = ""
     for c in data:
         if c["Country"] == country:
-           fact += Markup("<p>"+ "Immigration from "+ c["Country"]+": "+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ c["Year"] +"</p>")
+           fact += Markup("<p>"+ "Immigration from "+ c["Country"]+": "+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
     return fact
         
 @app.route("/")
