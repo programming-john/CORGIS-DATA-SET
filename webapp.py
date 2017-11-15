@@ -10,7 +10,7 @@ with open('immigration.json') as immigrants_data:
 def get_countries():
     op = ""
     for c in data:
-        op += Markup("<option value=" + c["Country"] +">" + c["Country"] + "</option>")
+        op += Markup("<option value=" +'"'+ c["Country"] +'"' +">" + c["Country"] + "</option>")
     return op
 
 def get_country_facts(country):
