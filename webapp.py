@@ -28,10 +28,15 @@ def render_main():
 def render_stats():
     return render_template('countrystats.html', country= get_countries())
 
+@app.route("/enforcement")
+def render_enforcement():
+    return render_template('enforcement.html')
+
 @app.route("/act", methods=['GET','POST'])
 def render_result():
     place = request.args['dat']
     return render_template('countrystats.html',country=get_countries(),info=get_country_facts(place))
+
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
