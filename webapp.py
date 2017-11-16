@@ -47,7 +47,7 @@ def render_result():
 @app.route("/enf", methods=['GET','POST'])
 def render_resultenforce():
     place = request.args['da']
-    return render_template('countrystats.html', country=get_countries(), info=get_country_enforcement(place))
+    return render_template('enforcement.html', country=get_countries(), info=get_country_enforcement(place))
 
 
 if __name__=="__main__":
