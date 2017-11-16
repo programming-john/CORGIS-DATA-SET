@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 {% block body %}
 <div class="text-center">
-  <p>This page is going to show enforcement numbers</p>
+  <p>Key:</p>
+  <p>Non-criminal: this amount of people were not admitted for non-criminal reasons.</p>
+  <p>Criminal: this amount of people were not admitted for crimes they've committed.</p>
+  <p>Apprehended: this amount of people were taken for undocumentation, or other reason.</p>
+  <p>Inadmissable: this amount of people could not be admitted for some reason.</p>
   <form action="/enf">
     <select name="da">
       {{ country }}
