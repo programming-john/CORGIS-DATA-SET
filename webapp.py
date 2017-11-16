@@ -13,9 +13,9 @@ def get_countries():
     currentCountry = data[0]["Country"]
     for c in data:
         if c["Country"] != currentCountry:
-           li.append(c["Country"])
-        else:
            currentCountry = c["Country"]
+        else:
+           li.append(c["Country"])
     li.sort()
     for it in li:
         op += Markup("<option value=" +'"'+ it +'"' +">" + it + "</option>")
