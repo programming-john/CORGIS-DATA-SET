@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+<div class="text-center">
   <p>Choose the country you would like to learn about.</p>
   <form action="/act">
     <select name="dat">
@@ -8,4 +9,5 @@
     <input type="submit" value="Submit">
   </form>  
   {{ info }}  
+</div>
 {% endblock %}
