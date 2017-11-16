@@ -9,8 +9,12 @@ with open('immigration.json') as immigrants_data:
 
 def get_countries():
     op = ""
+    li = []
     for c in data:
-        op += Markup("<option value=" +'"'+ c["Country"] +'"' +">" + c["Country"] + "</option>")
+        li.append(c["Country"])
+    li.sort()
+    for it in li:
+        op += Markup("<option value=" +'"'+ it +'"' +">" + it + "</option>")
     return op
 
 def get_country_facts(country):
