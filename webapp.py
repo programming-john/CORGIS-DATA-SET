@@ -33,6 +33,16 @@ def get_country_enforcement(country):
         if c["Country"] == country:
            fact += Markup("<p>"+"Government action taken for: <b>" + c["Country"] + "</b><br>"+ "Non-Criminal: " + str(c["Data"]["Enforcement"]["Non-criminal"]) + "<br>" + "Criminal: " + str(c["Data"]["Enforcement"]["Criminal"]) + "<br>" + "Apprehended: "+ str(c["Data"]["Enforcement"]["Apprehended"]) + "<br>" + "Inadmissable: " + str(c["Data"]["Enforcement"]["Inadmissable"]) + "<br>" + "Year: "+ str(c["Year"]) + "</p>")
     return fact
+
+def get_country_highest(country):
+    fact = ""
+    highest = data[0]["Naturalizations (Birth)"]
+    for c in data:
+        if c["Country"] == country:
+           if highest > c["Naturalizations (Birth)"]:
+                highest = c["Naturalizations (Birth)"]
+                fact = Markup("<p><b>" + c["Country"] + "</b>" + str(highest) + str(c["Year"]) + "</p>")
+    return fact
         
 @app.route("/")
 def render_main():
@@ -59,6 +69,11 @@ def render_result():
 def render_resultenforce():
     place = request.args['da']
     return render_template('enforcement.html', country=get_countries(), info=get_country_enforcement(place))
+
+@app.route("/nat", methods=['GET','POST'])
+def render_result():
+    place = request.args['d']
+    return render_template('natbbirth.html', country=get_countries(), info=get_country_highest(place))
 
 
 if __name__=="__main__":
