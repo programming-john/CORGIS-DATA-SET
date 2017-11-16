@@ -24,14 +24,14 @@ def get_country_facts(country):
     fact = ""
     for c in data:
         if c["Country"] == country:
-           fact += Markup("<p>"+ "Immigration from "+ c["Country"]+": "+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
+           fact += Markup("<p>"+ "Immigration from "+"<b>"+ c["Country"]+": </b>"+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
     return fact
 
 def get_country_enforcement(country):
     fact = ""
     for c in data:
         if c["Country"] == country:
-           fact += Markup("<p>"+"Government action taken for: " + c["Country"] + "<br>"+ "Non-Criminal: " + str(c["Data"]["Enforcement"]["Non-criminal"]) + "<br>" + "Criminal: " + str(c["Data"]["Enforcement"]["Criminal"]) + "<br>" + "Apprehended: "+ str(c["Data"]["Enforcement"]["Apprehended"]) + "<br>" + "Inadmissable: " + str(c["Data"]["Enforcement"]["Inadmissable"]) + "<br>" + "Year: "+ str(c["Year"]) + "</p>")
+           fact += Markup("<p>"+"Government action taken for: <b>" + c["Country"] + "</b><br>"+ "Non-Criminal: " + str(c["Data"]["Enforcement"]["Non-criminal"]) + "<br>" + "Criminal: " + str(c["Data"]["Enforcement"]["Criminal"]) + "<br>" + "Apprehended: "+ str(c["Data"]["Enforcement"]["Apprehended"]) + "<br>" + "Inadmissable: " + str(c["Data"]["Enforcement"]["Inadmissable"]) + "<br>" + "Year: "+ str(c["Year"]) + "</p>")
     return fact
         
 @app.route("/")
