@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+<div class="text-center">
   <p>This page is going to show enforcement numbers</p>
   <form action="/enf">
     <select name="da">
@@ -8,4 +9,5 @@
     <input type="submit" value="Submit">
   </form>  
   {{ info }} 
+</div>
 {% endblock %}
