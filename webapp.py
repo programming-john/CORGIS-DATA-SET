@@ -36,11 +36,11 @@ def get_country_enforcement(country):
 
 def get_country_highest(country):
     fact = ""
-    highest = data[0]["Naturalizations (Birth)"]
+    highest = data[0]["Data"]["Naturalizations (Birth)"]
     for c in data:
         if c["Country"] == country:
-           if highest > c["Naturalizations (Birth)"]:
-                highest = c["Naturalizations (Birth)"]
+           if highest > c["Data"]["Naturalizations (Birth)"]:
+                highest = c["Data"]["Naturalizations (Birth)"]
                 fact = Markup("<p><b>" + c["Country"] + "</b>" + str(highest) + str(c["Year"]) + "</p>")
     return fact
         
