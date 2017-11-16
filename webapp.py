@@ -9,15 +9,15 @@ with open('immigration.json') as immigrants_data:
 
 def get_countries():
     cc = data[0]["Country"]
-    countryset = ""
+    countryset = []
     for c in data:
-        if cc != c["Country"]:
-           countryset += cc
-           cc = c["Country"]
+        countryset.append(c["Country"])
     countryset.sort()
     options = ""
     for country in countryset:
-        options += Markup("<option value=" +'"'+ country +'"' +">" + country + "</option>")
+        if cc != country:
+           options += Markup("<option value=" +'"'+ country +'"' +">" + country + "</option>")
+           cc = country
     return options
 
 def get_country_facts(country):
