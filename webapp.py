@@ -12,7 +12,7 @@ def get_countries():
     li = []
     currentCountry = data[0]["Country"]
     for c in data:
-        if c["Country"] != currentCountry:
+        if currentCountry != c["Country"]:
            li.append(currentCountry)     
            currentCountry = c["Country"]
     li.sort()
