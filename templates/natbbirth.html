@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="text-center">
+  <p>Find out which year had the highest Naturalizations by birth</p>
+  <form action="/nat">
+    <select name="d">
+      {{ country }}
+    </select>
+    <input type="submit" value="Submit" class="btn">
+  </form>  
+  {{ info }} 
+</div>
+{% endblock %}
