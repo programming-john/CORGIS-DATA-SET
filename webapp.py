@@ -19,6 +19,13 @@ def get_country_facts(country):
         if c["Country"] == country:
            fact += Markup("<p>"+ "Immigration from "+ c["Country"]+": "+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
     return fact
+
+def get_country_enforcement(country):
+    fact = ""
+    for c in data:
+        if c["Country"] == country:
+           fact += Markup("<p>"+"Non-Criminal: "+str(c["Enforcement"]["Non-criminal"])+"<br>"+ "Criminal: "+ str(c["Enforcement"]["Criminal"])+"<br>"+"Apprehended: "+ str(c["Enforcement"]["Apprehended"]) +"<br>"+ "Inadmissable: "+str(c["Enforcement"]["Inadmissable"]) +"<br>"+"Year: "+ str(c["Year"]) + "</p>")
+    return fact
         
 @app.route("/")
 def render_main():
@@ -35,7 +42,12 @@ def render_enforcement():
 @app.route("/act", methods=['GET','POST'])
 def render_result():
     place = request.args['dat']
-    return render_template('countrystats.html',country=get_countries(),info=get_country_facts(place))
+    return render_template('countrystats.html', country=get_countries(), info=get_country_facts(place))
+
+@app.route("/enf", methods=['GET','POST'])
+def render_resultenforce():
+    place = request.args['da']
+    return render_template('countrystats.html', country=get_countries(), info=get_country_enforcement(place))
 
 
 if __name__=="__main__":
