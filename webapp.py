@@ -37,7 +37,7 @@ def render_stats():
 
 @app.route("/enforcement")
 def render_enforcement():
-    return render_template('enforcement.html')
+    return render_template('enforcement.html',country=get_country())
 
 @app.route("/act", methods=['GET','POST'])
 def render_result():
