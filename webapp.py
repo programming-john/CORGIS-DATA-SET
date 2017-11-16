@@ -71,7 +71,7 @@ def render_resultenforce():
     return render_template('enforcement.html', country=get_countries(), info=get_country_enforcement(place))
 
 @app.route("/nat", methods=['GET','POST'])
-def render_result():
+def render_resultnat():
     place = request.args['d']
     return render_template('natbbirth.html', country=get_countries(), info=get_country_highest(place))
 
