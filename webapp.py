@@ -24,7 +24,7 @@ def get_country_facts(country):
     fact = ""
     for c in data:
         if c["Country"] == country:
-           fact += Markup("<p>"+ "Immigration from "+"<b>"+ c["Country"]+": </b>"+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
+           fact += Markup("<p>"+ "Immigration from "+"<b>"+ c["Country"]+": </b>"+str(c["Data"]["Legal permanant residences"]["Last Residence"])+"<br>" + "Legal Residents by Birth: " + str(c["Data"]["Legal permanant residences"]["Birth"])+"<br>"+"Naturalizations by birth: "+ str(c["Data"]["Naturalizations (Birth)"])+"<br>"+"Year: "+ str(c["Year"]) +"</p>")
     return fact
 
 def get_country_enforcement(country):
