@@ -24,7 +24,7 @@ def get_country_enforcement(country):
     fact = ""
     for c in data:
         if c["Country"] == country:
-           fact += Markup("<p>"+ "Non-Criminal: " + str(c["Enforcement"]["Non-criminal"]) + "<br>" + "Criminal: " + str(c["Enforcement"]["Criminal"]) + "<br>" + "Apprehended: "+ str(c["Enforcement"]["Apprehended"]) + "<br>" + "Inadmissable: " + str(c["Enforcement"]["Inadmissable"]) + "<br>" + "Year: "+ str(c["Year"]) + "</p>")
+           fact += Markup("<p>"+ "Non-Criminal: " + str(c["Data"]["Enforcement"]["Non-criminal"]) + "<br>" + "Criminal: " + str(c["Data"]["Enforcement"]["Criminal"]) + "<br>" + "Apprehended: "+ str(c["Data"]["Enforcement"]["Apprehended"]) + "<br>" + "Inadmissable: " + str(c["Data"]["Enforcement"]["Inadmissable"]) + "<br>" + "Year: "+ str(c["Year"]) + "</p>")
     return fact
         
 @app.route("/")
