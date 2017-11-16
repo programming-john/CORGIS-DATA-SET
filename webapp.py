@@ -36,13 +36,15 @@ def get_country_enforcement(country):
 
 def get_country_highest(country):
     fact = ""
+    li = []
     for c in data:
         if c["Country"] == country:
-           highest = c["Data"]["Naturalizations (Birth)"]
-           if highest < c["Data"]["Naturalizations (Birth)"]:
-                highest = c["Data"]["Naturalizations (Birth)"]
-           else:
-                fact = Markup("<p>" + "Highest naturalizations by birth in <b>"+ c["Country"] + "</b>"  + str(highest) + " in "+ str(c["Year"]) + "</p>")
+           li.append(c["Data"]["Naturalizations (Birth)"])
+    highest = li[0]
+    for it in li:
+        if highest < it:
+           highest = it
+    fact = Markup("<p>" + "The highest Naturalizations by birth in " + country + " is " + str(highest) + "</p>")
     return fact
         
 @app.route("/")
