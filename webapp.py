@@ -46,6 +46,10 @@ def render_stats():
 def render_enforcement():
     return render_template('enforcement.html',country=get_countries())
 
+@app.route("/naturalizations")
+def render_nat():
+    return render_template('natbbirth.html',country=get_countries())
+
 @app.route("/act", methods=['GET','POST'])
 def render_result():
     place = request.args['dat']
