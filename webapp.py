@@ -41,7 +41,7 @@ def get_country_highest(country):
         if c["Country"] == country:
            if highest > c["Data"]["Naturalizations (Birth)"]:
                 highest = c["Data"]["Naturalizations (Birth)"]
-                fact = Markup("<p><b>" + c["Country"] + "</b>" + str(highest) + str(c["Year"]) + "</p>")
+                fact = Markup("<p><b>" + c["Country"] + "</b> Highest naturalizations by birth is: " + str(highest) + " in "+ str(c["Year"]) + "</p>")
     return fact
         
 @app.route("/")
