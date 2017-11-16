@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
 {% block body %}
   <p>This page is going to show enforcement numbers</p>
+  <form action="/enf">
+    <select name="da">
+      {{ country }}
+    </select>
+    <input type="submit" value="Submit">
+  </form>  
+  {{ info }} 
 {% endblock %}
