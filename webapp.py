@@ -8,17 +8,17 @@ with open('immigration.json') as immigrants_data:
         data = json.load(immigrants_data)
 
 def get_countries():
-    op = ""
-    li = []
-    currentCountry = data[0]["Country"]
+    cc = data[0]["Country"]
+    countryset = ""
     for c in data:
-        if currentCountry != c["Country"]:
-           li.append(currentCountry)     
-           currentCountry = c["Country"]
-    li.sort()
-    for it in li:
-        op += Markup("<option value=" +'"'+ it +'"' +">" + it + "</option>")
-    return op
+        if cc != c["Country"]:
+           countryset += cc
+           cc = c["Country"]
+    countryset.sort()
+    options = ""
+    for country in countryset:
+        options += Markup("<option value=" +'"'+ country +'"' +">" + country + "</option>")
+    return options
 
 def get_country_facts(country):
     fact = ""
