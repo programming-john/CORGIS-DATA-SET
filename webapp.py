@@ -51,6 +51,13 @@ def get_country_highest(country):
                 year = c["Year"]
     fact = Markup("<p>" + "The highest Naturalizations by birth in <b>" + country + "</b> is " + str(highest) + " in <b>" + str(year) +"</b></p>")
     return fact
+    
+def get_immigration_totals(year):
+    total = 0
+    for c in data:
+        if c["Year"] == year:
+            total += c["Data"]["Naturalizations (Birth)"]
+    return total
         
 @app.route("/")
 def render_main():
@@ -67,6 +74,10 @@ def render_enforcement():
 @app.route("/naturalizations")
 def render_nat():
     return render_template('natbbirth.html',country=get_countries())
+    
+@app.route("/bargraph")
+def render_bargraph():
+    return render_template('bar.html',fiv = get_immigration_totals(2005),six = get_immigration_totals(2006),sev = get_immigration_totals(2007),eig = get_immigration_totals(2008),nin = get_immigration_totals(2009),ten = get_immigration_totals(2010),ele = get_immigration_totals(2011),twe = get_immigration_totals(2012),thi = get_immigration_totals(2013),fou = get_immigration_totals(2014))
 
 @app.route("/act", methods=['GET','POST'])
 def render_result():
@@ -85,4 +96,4 @@ def render_resultnat():
 
 
 if __name__=="__main__":
-    app.run(debug=False, port=54321)
+    app.run(debug=True, port=54321)

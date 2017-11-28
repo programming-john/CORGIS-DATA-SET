@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 370px; width: 100%;">
+	<script>
+	window.onload = function () {
+	
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+		
+			title:{
+				text:"Total Naturalizations(Birth) from 2005-2014"
+			},
+			axisX:{
+				interval: 1
+			},
+			data: [{
+				type: "column",
+				name: "somename",
+				color: "#014D65",
+				dataPoints: [
+					{ y: {{ fiv }}, label: "2005" },
+					{ y: {{ six }}, label: "2006" },
+					{ y: {{ sev }}, label: "2007" },
+					{ y: {{ eig }}, label: "2008" },
+					{ y: {{ nin }}, label: "2009" },
+					{ y: {{ ten }}, label: "2010" },
+					{ y: {{ ele }}, label: "2011" },
+					{ y: {{ twe }}, label: "2012" },
+					{ y: {{ thi }}, label: "2013" },
+					{ y: {{ fou }}, label: "2014" }
+				]
+			}]
+		});
+	chart.render();
+	}
+	</script>
+</div>
+{% endblock %}
