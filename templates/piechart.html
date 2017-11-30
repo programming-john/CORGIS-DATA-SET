@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="text-center">
+	<form action="/piechart">
+		<select name="daf">
+			{{ country }}
+		</select>
+		<select name="leyears">
+			{{ anos }}
+		</select>
+		<input type="submit" value="Submit" class="btn">
+	</form>
+</div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 500px; width: 95%;">
+	<script>
+	window.onload = function() {
+
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		title: {
+			text: "Non-Immigrant Admissions in " + "{{ palace }}" +", "+ "{{ year }}"
+		},
+		data: [{
+			type: "pie",
+			startAngle: 240,
+			yValueFormatString: "##0.00\"%\"",
+			indexLabel: "{label} {y}",
+			dataPoints: [
+				{y: {{ bi }}, label: "Birth"},
+				{y: {{ lr }}, label: "Last Residence"}
+			]
+		}]
+	});
+	chart.render();
+	}
+	</script>
+</div>
+{% endblock %}
