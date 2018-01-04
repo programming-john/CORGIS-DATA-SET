@@ -128,7 +128,7 @@ def render_resultnat():
     place = request.args['d']
     return render_template('natbbirth.html', country=get_countries(), info=get_country_highest(place))
     
-@app.route("/piechart", methods=['GET','POST'])
+@app.route("/piechart", methods=['GET','POST']).
 def render_piechart():
     place = request.args['daf']
     years  = request.args['leyears']
